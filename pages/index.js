@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
 import styles from "./index.module.css";
+import { Analytics } from '@vercel/analytics/react';
 
 export default function Home() {
   const [animalInput, setAnimalInput] = useState("");
@@ -47,6 +48,7 @@ export default function Home() {
           <input type="submit" value="Write!" />
         </form>
         <div className={styles.result}>{result}</div>
+        <Analytics />
       </main>
     </div>
   );
