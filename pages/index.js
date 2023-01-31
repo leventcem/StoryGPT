@@ -16,7 +16,7 @@ export default function Home() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ animal: animalInput, length }),
+        body: JSON.stringify({ animal: animalInput, length: length }),
       });
 
       const data = await response.json();
