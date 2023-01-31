@@ -20,6 +20,13 @@
   color: #353740;
   font-family: "ColfaxAI", Helvetica, sans-serif;
 }
+.main,
+.main input[type="number"] {
+  font-size: 16px;
+  line-height: 24px;
+  color: #353740;
+  font-family: "ColfaxAI", Helvetica, sans-serif;
+}
 .main {
   display: flex;
   flex-direction: column;
@@ -42,6 +49,13 @@
   width: 320px;
 }
 .main textarea {
+  padding: 12px 16px;
+  border: 1px solid #10a37f;
+  border-radius: 4px;
+  margin-bottom: 24px;
+  resize: none;
+}
+.main input[type="number"] {
   padding: 12px 16px;
   border: 1px solid #10a37f;
   border-radius: 4px;

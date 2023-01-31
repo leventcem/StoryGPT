@@ -5,6 +5,7 @@ import { Analytics } from '@vercel/analytics/react';
 
 export default function Home() {
   const [animalInput, setAnimalInput] = useState("");
+  const [length, setLength] = useState();
   const [result, setResult] = useState();
 
   async function onSubmit(event) {
@@ -15,7 +16,7 @@ export default function Home() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ animal: animalInput }),
+        body: JSON.stringify({ animal: animalInput, length }),
       });
 
       const data = await response.json();
@@ -43,8 +44,10 @@ export default function Home() {
         <img src="/dog.png" className={styles.icon} />
         <h3>Write me a personalized story!</h3>
         <form onSubmit={onSubmit}>
-          <label class="label" htmlFor="animal"> Tell me a bit about yourself and the story you want to see (you may specify a length if you wish to): </label>
+          <label class="label" htmlFor="animal"> Tell me a bit about yourself and the story you want to see: </label>
           <textarea name="animal" value={animalInput} onChange={(e) => setAnimalInput(e.target.value)}></textarea>
+          <label class="label" htmlFor="length"> Length of the story (in number of words): </label>
+          <input type="number" name="length" value={length} onChange={(e) => setLength(e.target.value)} />
           <input type="submit" value="Write!" />
         </form>
         <div className={styles.result}>{result}</div>

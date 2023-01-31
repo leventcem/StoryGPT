@@ -16,6 +16,7 @@ export default async function (req, res) {
   }
 
   const animal = req.body.animal || '';
+  const length = req.body.length || 50;
   if (animal.trim().length === 0) {
     res.status(400).json({
       error: {
@@ -30,7 +31,7 @@ export default async function (req, res) {
       model: "text-davinci-003",
       prompt: generatePrompt(animal),
       temperature: 0.6,
-      max_tokens: 50,
+      max_tokens: length,
     });    
     res.status(200).json({ result: completion.data.choices[0].text });
   } catch(error) {
