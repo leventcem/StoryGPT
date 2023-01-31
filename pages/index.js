@@ -43,7 +43,7 @@ export default function Home() {
         <img src="/dog.png" className={styles.icon} />
         <h3>Write me a personalized story!</h3>
         <form onSubmit={onSubmit}>
-          <label class="label" htmlFor="animal"> Tell me a bit about yourself! </label>
+          <label class="label" htmlFor="animal"> Tell me a bit about yourself and the story you want to see (you may specify a length if you wish to): </label>
           <textarea name="animal" value={animalInput} onChange={(e) => setAnimalInput(e.target.value)}></textarea>
           <input type="submit" value="Write!" />
         </form>
