@@ -31,7 +31,6 @@ export default async function (req, res) {
       model: "text-davinci-003",
       prompt: generatePrompt(animal),
       temperature: 0.6,
-      max_tokens: length,
     });    
     res.status(200).json({ result: completion.data.choices[0].text });
   } catch(error) {
@@ -55,7 +54,7 @@ function generatePrompt(animal) {
     animal[0].toUpperCase() + animal.slice(1).toLowerCase();
   return (
     `
-    Hi! I want you to generate a story that's made for me so I like it and it's about me (or at least a the way I want to see myself.) Here is a bit about myself:
+    Hi! I want you to generate a story that's made for me so I like it and it's about me (or at least a the way I want to see myself.) You should write it in ${length} paragraphs Here is a bit about myself:
 
     About me: ${capitalizedAnimal}
     `
