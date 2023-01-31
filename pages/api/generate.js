@@ -52,9 +52,10 @@ export default async function (req, res) {
 function generatePrompt(animal) {
   const capitalizedAnimal =
     animal[0].toUpperCase() + animal.slice(1).toLowerCase();
+  const newLength = parseInt(length);
   return (
     `
-    Hi! I want you to generate a story that's made for me so I like it and it's about me (or at least a the way I want to see myself.) You should write it in ${length} paragraphs Here is a bit about myself:
+    Hi! I want you to generate a story that's made for me so I like it and it's about me (or at least a the way I want to see myself.) You should write it in ${newLength} paragraphs Here is a bit about myself:
 
     About me: ${capitalizedAnimal}
     `
