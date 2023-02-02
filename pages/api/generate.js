@@ -16,7 +16,10 @@ export default async function (req, res) {
   }
 
   const animal = req.body.animal || '';
-  const length = req.body.length || 50;
+  let length = parseInt(req.body.length);
+  if (length === 0) {
+    length = 100;
+  }
   if (animal.trim().length === 0) {
     res.status(400).json({
       error: {
@@ -30,6 +33,7 @@ export default async function (req, res) {
     const completion = await openai.createCompletion({
       model: "text-davinci-003",
       prompt: generatePrompt(animal),
+      max_tokens: length,
       temperature: 0.6,
     });    
     res.status(200).json({ result: completion.data.choices[0].text });
@@ -52,10 +56,9 @@ export default async function (req, res) {
 function generatePrompt(animal) {
   const capitalizedAnimal =
     animal[0].toUpperCase() + animal.slice(1).toLowerCase();
-  const newLength = parseInt(length);
   return (
     `
-    Hi! I want you to generate a story that's made for me so I like it and it's about me (or at least a the way I want to see myself.) You should write it in ${newLength} paragraphs Here is a bit about myself:
+    Hi! I want you to generate a Y/N fanfiction that's made for me so I like it and it's about me (or at least a the way I want to see myself.) If you know my name, used it instead of Y/N. Here is a bit about myself:
 
     About me: ${capitalizedAnimal}
     `
