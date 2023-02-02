@@ -5,7 +5,7 @@ import { Analytics } from '@vercel/analytics/react';
 
 export default function Home() {
   const [animalInput, setAnimalInput] = useState("");
-  const [lengthInput, setLengthInput] = useState();
+  const [lengthInput, setLengthInput] = useState(50);
   const [result, setResult] = useState();
 
   async function onSubmit(event) {

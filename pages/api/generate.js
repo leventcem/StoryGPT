@@ -17,9 +17,6 @@ export default async function (req, res) {
 
   const animal = req.body.animal || '';
   let length = parseInt(req.body.length);
-  if (length === 0) {
-    length = 100;
-  }
   if (animal.trim().length === 0) {
     res.status(400).json({
       error: {
