@@ -1,6 +1,6 @@
-# OpenAI API Quickstart - Node.js example app
+# OpenAI Story Generator - Node.js example app
 
-This is an example pet name generator app used in the OpenAI API [quickstart tutorial](https://beta.openai.com/docs/quickstart). It uses the [Next.js](https://nextjs.org/) framework with [React](https://reactjs.org/). Check out the tutorial or follow the instructions below to get set up.
+This is an example story generator app used in the OpenAI API [quickstart tutorial](https://beta.openai.com/docs/quickstart). It uses the [Next.js](https://nextjs.org/) framework with [React](https://reactjs.org/). Check out the tutorial or follow the instructions below to get set up.
 
 ## Setup
 
@@ -11,7 +11,7 @@ This is an example pet name generator app used in the OpenAI API [quickstart tut
 3. Navigate into the project directory
 
    ```bash
-   $ cd openai-quickstart-node
+   $ cd StoryGPT
    ```
 
 4. Install the requirements
@@ -22,7 +22,7 @@ This is an example pet name generator app used in the OpenAI API [quickstart tut
 
 5. Make a copy of the example environment variables file
 
-   On Linux systems: 
+   On MacOs systems: 
    ```bash
    $ cp .env.example .env
    ```
@@ -35,7 +35,7 @@ This is an example pet name generator app used in the OpenAI API [quickstart tut
 7. Run the app
 
    ```bash
-   $ npm run dev
+   $ npm run start
    ```
 
 You should now be able to access the app at [http://localhost:3000](http://localhost:3000)! For the full context behind this example app, check out the [tutorial](https://beta.openai.com/docs/quickstart).
