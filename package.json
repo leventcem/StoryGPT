@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "start public/1.log && next start"
+    "start": "start public/gpt.db && next start"
   },
   "dependencies": {
     "@vercel/analytics": "^0.1.8",
